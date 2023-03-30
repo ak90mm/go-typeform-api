@@ -23,7 +23,7 @@ type FormLinks struct {
 }
 type Form struct {
 	CuiSettings     *CuiSettings      `json:"cui_settings,omitempty"`
-	Fields          *Fields           `json:"fields,omitempty"`
+	Fields          *[]Fields           `json:"fields,omitempty"`
 	Hidden          *[]string         `json:"hidden,omitempty"`
 	Logic           *[]Logic          `json:"logic,omitempty"`
 	Settings        *Settings         `json:"settings,omitempty"`
@@ -54,7 +54,7 @@ type FieldsProperties struct {
 	AllowOtherChoice       bool    `json:"allow_other_choice"`
 	AlphabeticalOrder      bool    `json:"alphabetical_order"`
 	ButtonText             string  `json:"button_text"`
-	Choices                Choices `json:"choices"`
+	Choices               []Choices `json:"choices"`
 	Currency               string  `json:"currency"`
 	DefaultCountryCode     string  `json:"default_country_code"`
 	Description            string  `json:"description"`
@@ -321,6 +321,7 @@ func (t *Typeform) GetForm(id string) (*Form, error) {
 	if err != nil {
 		return nil, err
 	}
+	
 	var form *Form
 	err = json.Unmarshal(contents, &form)
 	if err != nil {
