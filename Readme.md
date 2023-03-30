@@ -5,7 +5,7 @@ This package provides a Go interface for the [Typeform API](https://developer.ty
 ## Installation
 
 ```
-go get github.com/roopeshvs/typeform
+go get github.com/ak90mm/go-typeform-api
 ```
 
 ## Getting Started
