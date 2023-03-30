@@ -1,4 +1,4 @@
-module github.com/roopeshvs/typeform
+module github.com/ak90mm/nuflow/go-typeform-api
 
 go 1.17
 
